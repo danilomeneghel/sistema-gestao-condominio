@@ -41,7 +41,7 @@ Caso não tenha instalado o Docker ou dê alguma falha na instalação, tente co
 
 ### MySql
 Crie um banco de dados com o nome "condominio" no seu Mysql.<br>
-Abra o arquivo .application.yml e efetue a configuração correta para conexão do seu banco de dados.<br>
+Abra o arquivo .application-dev.yml e efetue a configuração correta para conexão do seu banco de dados.<br>
 
 ```
 $ mysql -u<seu usuário> -p<sua senha>
@@ -56,7 +56,7 @@ Além disso, é preciso ter o Java 15 e o MySql 8 instalado.<br>
 Tendo tudo instalado e rodando localmente, basta executar o seguinte comando:
 
 ```
-$ cd sistema-gestao-condominio
+$ cd sistema-condominio
 $ mvn clean spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
