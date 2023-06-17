@@ -1,0 +1,9 @@
+/target/
+/bin/
+/.settings/
+/.git/
+.classpath
+.project
+/src/main/webapp/
+/.idea/
+/Condominio.iml
