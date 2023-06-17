@@ -56,7 +56,7 @@ Além disso, é preciso ter o Java 15 e o MySql 8 instalado.<br>
 Tendo tudo instalado e rodando localmente, basta executar o seguinte comando:
 
 ```
-$ cd sistema-condominio
+$ cd sistema-gestao-condominio
 $ mvn clean spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
