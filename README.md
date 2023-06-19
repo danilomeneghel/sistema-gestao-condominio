@@ -57,6 +57,7 @@ Tendo tudo instalado e rodando localmente, basta executar o seguinte comando:
 
 ```
 $ cd sistema-gestao-condominio
+$ export $(cat .env | xargs)
 $ mvn clean spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
