@@ -7,14 +7,14 @@ server:
 spring:
   datasource:
     dbcp2:
-      max-total: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
+      max-total: ${DATASOURCE_MAX_ACTIVE:10}
     hikari:
-      maximum-pool-size: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
+      maximum-pool-size: ${DATASOURCE_MAX_ACTIVE:10}
     tomcat:
-      max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
-    username: ${SPRING_DATASOURCE_USERNAME:condominio}
-    password: ${SPRING_DATASOURCE_PASSWORD:secret}
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/condominio?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false}
+      max-active: ${DATASOURCE_MAX_ACTIVE:10}
+    username: ${DATASOURCE_USERNAME:condominio}
+    password: ${DATASOURCE_PASSWORD:secret}
+    url: jdbc:mysql://${DATASOURCE_HOST:localhost}:${DATASOURCE_PORT:3306}/${DATASOURCE_NAME:condominio}?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
   jpa:
     hibernate:
       ddl-auto: update

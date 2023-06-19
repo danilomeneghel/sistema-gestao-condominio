@@ -1,20 +1,20 @@
 server:
-  port: ${PORT:8080}
+  port: 8080
   servlet:
     session:
       cookie:
-        secure: ${SESSION_COOKIE_SECURE_FLAG:false}
+        secure: false
 spring:
   datasource:
     dbcp2:
-      max-total: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
+      max-total: 10
     hikari:
-      maximum-pool-size: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
+      maximum-pool-size: 10
     tomcat:
-      max-active: ${SPRING_DATASOURCE_MAX_ACTIVE:10}
-    username: ${SPRING_DATASOURCE_USERNAME:condominio}
-    password: ${SPRING_DATASOURCE_PASSWORD:secret}
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://db-condominio:3306/condominio?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false}
+      max-active: 10
+    username: condominio
+    password: secret
+    url: jdbc:mysql://db-condominio:3306/condominio?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
   jpa:
     hibernate:
       ddl-auto: update
@@ -22,16 +22,16 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         jdbc:
-          time_zone: ${SPRING_JPA_TIMEZONE:America/Sao_Paulo}
-    show-sql: ${SPRING_JPA_SHOW_SQL:true}
+          time_zone: America/Sao_Paulo
+    show-sql: true
   mail:
-    host: ${MAIL_HOST:smtp.gmail.com}
-    username: ${MAIL_USERNAME:null}
-    password: ${MAIL_PASSWORD:null}
-    port: ${MAIL_PORT:587}
+    host: smtp.gmail.com
+    username: null
+    password: null
+    port: 587
     properties:
       mail:
         smtp:
-          auth: ${MAIL_AUTH:true}
+          auth: true
           starttls:
-            enable: ${MAIL_TLS:true}
+            enable: true

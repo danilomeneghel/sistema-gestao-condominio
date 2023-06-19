@@ -57,7 +57,7 @@ Tendo tudo instalado e rodando localmente, basta executar o seguinte comando:
 
 ```
 $ cd sistema-gestao-condominio
-$ mvn clean spring-boot:run
+$ mvn clean spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
 ## Acesso ao Sistema
