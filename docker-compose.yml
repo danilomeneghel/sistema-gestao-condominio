@@ -2,31 +2,31 @@ version: '3.3'
 
 services:
   db-condominio:
-    image: 'mysql'
+    image: 'mysql:8.0.30'
     container_name: db-condominio
     restart: always
-    environment:
-        MYSQL_DATABASE: 'condominio'
-        MYSQL_PASSWORD: 'root'
-        MYSQL_ROOT_PASSWORD: 'root'
-    ports:
-        - "3306:3306"
-    volumes:
-        - ./:/mysql
     networks:
       - condominio-network
+    environment:
+      MYSQL_DATABASE: 'condominio'
+      MYSQL_USER: 'condominio'
+      MYSQL_PASSWORD: 'secret'
+      MYSQL_ROOT_PASSWORD: 'secretroot'
+    volumes:
+        - ./:/mysql
+    ports:
+        - "3306:3306"
   condominio-app:
     build: .
     container_name: condominio-app
     command: mvn clean spring-boot:run -Dspring-boot.run.profiles=docker
+    networks:
+      - condominio-network
     ports:
       - "8080:8080"
     depends_on:
       - db-condominio
-    networks:
-      - condominio-network
 networks:
   condominio-network:
     driver: "bridge"
-volumes:
-  data-mysql-db:
+

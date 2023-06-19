@@ -12,9 +12,9 @@ Sistema para gestão de condomínios desenvolvido em Java com Spring Boot.
 
 ## Requisitos
 
-- Java JDK >= 15
-- Apache Maven >= 3.6.3
-- MySql 8
+- Java JDK >= 17
+- Apache Maven >= 3.8.6
+- MySql 8.0.30
 - Docker (Opcional)
 
 ## Tecnologias
@@ -41,7 +41,7 @@ Caso não tenha instalado o Docker ou dê alguma falha na instalação, tente co
 
 ### MySql
 Crie um banco de dados com o nome "condominio" no seu Mysql.<br>
-Abra o arquivo .application-dev.yml e efetue a configuração correta para conexão do seu banco de dados.<br>
+Abra o arquivo .env e efetue a configuração correta para conexão do seu banco de dados.<br>
 
 ```
 $ mysql -u<seu usuário> -p<sua senha>
@@ -57,7 +57,7 @@ Tendo tudo instalado e rodando localmente, basta executar o seguinte comando:
 
 ```
 $ cd sistema-gestao-condominio
-$ mvn clean spring-boot:run -Dspring-boot.run.profiles=dev
+$ mvn clean spring-boot:run
 ```
 
 ## Acesso ao Sistema
@@ -81,5 +81,3 @@ Projeto licenciado sob <a href="LICENSE">The MIT License (MIT)</a>.<br><br>
 ![Screenshots](screenshots/screenshot06.png) <br><br>
 ![Screenshots](screenshots/screenshot07.png) <br><br>
 ![Screenshots](screenshots/screenshot08.png) <br><br>
-![Screenshots](screenshots/screenshot09.png) <br><br>
-

@@ -1,3 +1,3 @@
-FROM maven:3.6.3-openjdk-15-slim
+FROM maven:3.8.6-amazoncorretto-17
 
 COPY ./ ./

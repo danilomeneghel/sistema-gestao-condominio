@@ -44,7 +44,7 @@ public class UsuarioController {
 			return new ModelAndView("fragmentos/layoutSite", "conteudo", "sindicoCadastro");
 		}
 		usuarioService.salvarSindico(sindico);
-		return new ModelAndView("redirect:/login?novo");
+		return new ModelAndView("redirect:/inicio?novo");
 	}
 
 	@GetMapping("/cadastro")
@@ -83,7 +83,7 @@ public class UsuarioController {
 	public String putRedefinir(@RequestParam("username") String username, @RequestParam("password") String password,
 			@RequestParam("token") String token) {
 		if (usuarioService.redefinirSenha(username, token, password)) {
-			return "redirect:/login?redefinido";
+			return "redirect:/inicio?redefinido";
 		} else {
 			return "redirect:/conta/redefinir?invalido";
 		}

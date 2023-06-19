@@ -21,14 +21,14 @@ public class InicioController {
 		return new ModelAndView("fragmentos/layoutSite", "conteudo", "inicio");
 	}
 
-	@GetMapping({ "/entrar", "/login" })
+	@GetMapping({ "/entrar" })
 	public ModelAndView preLogin() {
-		return new ModelAndView("fragmentos/layoutSite", "conteudo", "login");
+		return new ModelAndView("fragmentos/layoutSite", "conteudo", "inicio");
 	}
 
 	@GetMapping("/autenticado")
 	public String posLogin(Authentication authentication) {
-		String retorno = "redirect:/login?erro";
+		String retorno = "redirect:/inicio?erro";
 		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 		if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("SINDICO"))) {
 			retorno = "redirect:/sindico";
