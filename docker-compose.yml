@@ -19,7 +19,7 @@ services:
   condominio-app:
     build: .
     container_name: condominio-app
-    command: mvn clean spring-boot:run -Dspring-boot.run.profiles=docker
+    command: mvn clean spring-boot:run -DskipTests -Dspring-boot.run.profiles=docker
     networks:
       - condominio-network
     ports:
