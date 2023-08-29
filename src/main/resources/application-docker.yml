@@ -14,7 +14,7 @@ spring:
       max-active: 10
     username: condominio
     password: secret
-    url: jdbc:mysql://db-condominio:3306/condominio?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://condominio-db:3306/condominio?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&characterEncoding=UTF-8
   jpa:
     hibernate:
       ddl-auto: update

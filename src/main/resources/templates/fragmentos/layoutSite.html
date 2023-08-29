@@ -23,7 +23,6 @@
 <title th:replace="'site/' + ${conteudo} :: title"></title>
 </head>
 <body id="site">
-	<th:block th:replace="fragmentos/cabecalho :: cabecalho" />
 	<th:block th:replace="'site/' + ${conteudo} :: conteudo" />
 	<th:block th:replace="fragmentos/rodape :: rodape" />
 

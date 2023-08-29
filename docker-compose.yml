@@ -1,9 +1,9 @@
 version: '3.3'
 
 services:
-  db-condominio:
+  condominio-db:
     image: 'mysql:8.0.30'
-    container_name: db-condominio
+    container_name: condominio-db
     restart: always
     networks:
       - condominio-network
@@ -25,7 +25,7 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - db-condominio
+      - condominio-db
 networks:
   condominio-network:
     driver: "bridge"

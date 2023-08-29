@@ -24,6 +24,7 @@ Sistema para gestão de condomínios desenvolvido em Java com Spring Boot.
 - Maven
 - Lombok
 - Spring Boot
+- Thymeleaf
 - MySql
 - Docker-Compose
 
@@ -81,3 +82,4 @@ Projeto licenciado sob <a href="LICENSE">The MIT License (MIT)</a>.<br><br>
 ![Screenshots](screenshots/screenshot06.png) <br><br>
 ![Screenshots](screenshots/screenshot07.png) <br><br>
 ![Screenshots](screenshots/screenshot08.png) <br><br>
+![Screenshots](screenshots/screenshot09.png) <br><br>
