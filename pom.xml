@@ -8,10 +8,8 @@
 	<artifactId>condominio</artifactId>
 	<version>1.0.1</version>
 	<packaging>jar</packaging>
-
 	<name>Gestão para Condomínios</name>
-	<description></description>
-
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
