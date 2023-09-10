@@ -280,11 +280,38 @@ fieldset:disabled input::placeholder, fieldset:disabled textarea::placeholder{
 		left: auto;
 	}
 }
+
 button.dropdown-item {
 	cursor: pointer;
 }
+
+.list-group-item {
+    padding: 0px !important;
+    border: 0px !important;
+}
+
 .list-group-item[data-toggle=collapse]{
 	cursor: pointer;
+}
+
+.container-login {
+  width: 100%;
+  max-width: 380px;
+  margin: auto;
+}
+
+.logo-login {
+  margin-top: 0px !important;
+  padding-bottom: 20px !important;
+}
+
+.form-item {
+  margin: 0px 0px !important;
+  padding: 8px 0px !important;
+}
+
+.input-login {
+  padding: 12px !important;
 }
 
 /*  Correções nos inputs de formulários */

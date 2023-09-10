@@ -6,9 +6,9 @@
 
 	<groupId>app</groupId>
 	<artifactId>condominio</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.5</version>
 	<packaging>jar</packaging>
-	<name>Gestão para Condomínios</name>
+	<name>Gestão de Condomínio</name>
 	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
