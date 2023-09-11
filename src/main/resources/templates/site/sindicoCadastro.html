@@ -10,7 +10,7 @@
 	<th:block th:fragment="conteudo">
 		<main role="main" class="container">
 		<h3 class="font-weight-light" th:text="${sindico.id != null}?'Meu cadastro':'Criar cadastro'"></h3>
-		<p th:text="${sindico.id == null} ? 'Obrigado por escolher o Condomínio App! Se você é síndico, preencha os dados abaixo para se registrar e gerenciar um condomínio.' : (${param.somenteLeitura} ? 'As informações não podem ser alteradas neste modo.' :  'Ao salvar, as informações do seu cadastro serão atualizadas.')"></p>
+		<p th:text="${sindico.id == null} ? 'Obrigado por escolher o Gestão de Condomínio! Se você é síndico, preencha os dados abaixo para se registrar e gerenciar um condomínio.' : (${param.somenteLeitura} ? 'As informações não podem ser alteradas neste modo.' :  'Ao salvar, as informações do seu cadastro serão atualizadas.')"></p>
 		<form th:action="@{/conta/cadastr{sufixo}(sufixo=(${sindico.id != null}?'o':'ar'))}" th:object="${sindico}" th:method="${sindico.id == null} ? post : put" novalidate>
 			<fieldset th:disabled="${param.somenteLeitura}" class="mb-3">
 				<input type="hidden" th:field="*{id}" />

@@ -105,7 +105,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		Usuario usuario = ler(username);
 		if (usuario != null) {
 			String para = usuario.getEmail();
-			String assunto = "Condomínio App - Redefinição de Senha";
+			String assunto = "Gestão de Condomínio - Redefinição de Senha";
 			String mensagem = "Acesse o endereço abaixo para redefinir sua senha:\n\nhttp://localhost:8080/conta/redefinir?username="
 					+ usuario.getUsername() + "&token=" + getToken(usuario.getPassword())
 					+ "\n\nCaso não consiga clicar no link acima, copie-o e cole em seu navegador."
