@@ -6,7 +6,7 @@
 
 /* Cabeçalho fixo */
 body {
-	padding-top: 56px; /* Tamanho do menu superior */
+	/*padding-top: 56px;*/
 }
 
 /* Rodapé fixo */
@@ -294,26 +294,6 @@ button.dropdown-item {
 	cursor: pointer;
 }
 
-.container-login {
-  width: 100%;
-  max-width: 380px;
-  margin: auto;
-}
-
-.logo-login {
-  margin-top: 0px !important;
-  padding-bottom: 20px !important;
-}
-
-.form-item {
-  margin: 0px 0px !important;
-  padding: 8px 0px !important;
-}
-
-.input-login {
-  padding: 12px !important;
-}
-
 /*  Correções nos inputs de formulários */
 .input-group .last {
 	border-top-right-radius: 0.25rem !important;
@@ -327,4 +307,98 @@ input[type=date], input[type=datetime-local], input[type=month], input[type=time
 }
 input:placeholder-shown {
   text-overflow: ellipsis;
+}
+
+.col-login-image {
+    display: block;
+    width: 55%;
+    min-height: 100vh;
+    float: left;
+    background: url("/images/login-image.jpg") no-repeat;
+    background-size: auto 100%;
+    overflow: hidden;
+}
+
+.col-login-image2 {
+    display: block;
+    width: 55%;
+    min-height: 100vh;
+    float: left;
+    background: url("/images/login-image2.jpg") no-repeat;
+    background-size: auto 100%;
+    overflow: hidden;
+}
+
+.col-login-form {
+    display: block;
+    width: 45%;
+    min-height: 100vh;
+    float: left;
+    background-color: #343a40 !important;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.container-login {
+    width: 100%;
+    max-width: 380px;
+    min-height: 550px;
+    padding: 90px 15px 40px 15px;
+    margin: auto;
+}
+
+.logo-login {
+    margin-top: 0px !important;
+    padding-bottom: 15px !important;
+}
+
+.form-item {
+    margin: 0px 0px !important;
+    padding: 8px 0px !important;
+}
+
+.form-item input-login {
+    padding-left: 20px;
+}
+
+.form-item span {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 3rem;
+    text-align: center;
+    pointer-events: none;
+    color: #8c8c8c;
+}
+
+.input-login, .input-login:focus {
+    padding: 12px 34px !important;
+    background-color: #24282d !important;
+    color: #8c8c8c;
+    border-color: #8c8c8c;
+}
+
+.button-login {
+    padding: 12px !important;
+}
+
+.text-version {
+    font-size: 14px !important;
+    text-align: center !important;
+    margin-top: 10px !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+    .col-login-image, .col-login-image2 {
+        display: none;
+        width: 0;
+    }
+
+    .col-login-form {
+        display: block;
+        width: 100%;
+    }
 }
