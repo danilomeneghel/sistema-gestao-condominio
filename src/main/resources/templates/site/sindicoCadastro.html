@@ -7,7 +7,7 @@
 <th:block th:fragment="conteudo">
     <div class="col-login-image2">&nbsp;</div>
     <div class="col-login-form">
-        <div class="container-login">
+        <div id="container-login">
             <h3>Cadastro</h3><br>
 
             <form th:action="@{/conta/cadastr{sufixo}(sufixo=(${sindico.id != null}?'o':'ar'))}" th:object="${sindico}"
@@ -15,36 +15,36 @@
                 <input type="hidden" th:field="*{id}"/>
                 <input type="hidden" th:field="*{condominio}"/>
                 <div class="form-item">
-                    <span><i class="fa fa-user-circle"></i></span>
-                    <input autofocus class="form-control input-login" type="text" th:errorclass="is-invalid"
-                           th:field="*{nome}" placeholder="Nome"/>
+                    <input autofocus class="form-control" type="text" th:errorclass="is-invalid"
+                    th:field="*{nome}" placeholder="Nome"/>
+                    <i class="fa fa-user-circle"></i>
                     <div class="invalid-feedback" th:errors="*{nome}"></div>
                 </div>
                 <div class="form-item">
-                    <span><i class="fa fa-user-circle"></i></span>
-                    <input class="form-control input-login" type="text" th:errorclass="is-invalid"
+                    <input class="form-control" type="text" th:errorclass="is-invalid"
                            th:field="*{sobrenome}"
-                           placeholder="Sobrenome"/>
+                    placeholder="Sobrenome"/>
+                    <i class="fa fa-user-circle"></i>
                     <div class="invalid-feedback" th:errors="*{sobrenome}"></div>
                 </div>
                 <div class="form-item">
-                    <span><i class="fa fa-envelope"></i></span>
-                    <input class="form-control input-login" type="text" th:errorclass="is-invalid"
+                    <input class="form-control" type="text" th:errorclass="is-invalid"
                            th:field="*{email}"
-                           placeholder="E-mail"/>
+                    placeholder="E-mail"/>
+                    <i class="fa fa-envelope"></i>
                     <div class="invalid-feedback" th:errors="*{email}"></div>
                 </div>
                 <div class="form-item">
-                    <span><i class="fa fa-user"></i></span>
-                    <input autocomplete="off" class="form-control input-login" type="text"
-                           th:errorclass="is-invalid" th:field="*{username}" placeholder="Usuário"/>
+                    <input autocomplete="off" class="form-control" type="text"
+                    th:errorclass="is-invalid" th:field="*{username}" placeholder="Usuário"/>
+                    <i class="fa fa-user"></i>
                     <div class="invalid-feedback" th:errors="*{username}"></div>
                 </div>
                 <div class="form-item">
-                    <span><i class="fa fa-lock"></i></span>
-                    <input autocomplete="off" class="form-control input-login" type="password"
+                    <input autocomplete="off" class="form-control" type="password"
                            th:errorclass="is-invalid" th:field="*{password}"
-                           th:placeholder="${sindico.id != null}?'Nova senha':'Senha'"/>
+                    th:placeholder="${sindico.id != null}?'Nova senha':'Senha'"/>
+                    <i class="fa fa-lock"></i>
                     <div class="invalid-feedback" th:errors="*{password}"></div>
                     <small th:if="${sindico.id != null}">Se não quiser alterar a senha, digite a sua senha atual</small>
                 </div>
@@ -60,7 +60,7 @@
                 </div> -->
                 <div class="form-item">
                     <input th:unless="${param.somenteLeitura}" type="submit"
-                           class="btn btn-primary form-control button-login" value="Cadastrar"/>
+                           class="btn btn-primary form-control" value="Cadastrar"/>
                 </div>
             </form>
             <a th:href="@{/}">Já tenho conta</a>

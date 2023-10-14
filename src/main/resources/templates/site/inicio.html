@@ -6,7 +6,7 @@
 <body>
 <th:block th:fragment="conteudo">
     <div class="col-login-form">
-        <div class="container-login">
+        <div id="container-login">
             <div class="logo-login text-center">
                 <img src="images/logo.png" height="125px">
             </div>
@@ -28,19 +28,19 @@
             </div>
             <form th:action="@{/entrar}" th:method="post" class="needs-validation" autocomplete="off" novalidate>
                 <div class="form-item">
-                    <span><i class="fa fa-user"></i></span>
-                    <input class="form-control last input-login" type="text" name="username"
-                           placeholder="Usuário" autofocus="autofocus" required/>
+                    <input class="form-control" type="text" name="username"
+                    placeholder="Usuário" autofocus="autofocus" required/>
+                    <i class="fa fa-user"></i>
                     <div class="invalid-feedback">Campo obrigatório</div>
                 </div>
                 <div class="form-item">
-                    <span><i class="fa fa-lock"></i></span>
-                    <input class="form-control last input-login" type="password" name="password"
-                           placeholder="Senha" required/>
+                    <input class="form-control" type="password" name="password"
+                    placeholder="Senha" required/>
+                    <i class="fa fa-lock"></i>
                     <div class="invalid-feedback">Campo obrigatório</div>
                 </div>
                 <div class="form-item">
-                    <input class="btn btn-primary form-control button-login" type="submit" value="Entrar"/>
+                    <input class="btn btn-primary form-control" type="submit" value="Entrar"/>
                 </div>
                 <small><a th:href="@{/conta/redefinir}" tabindex="-1">Esqueci minha senha</a></small>
             </form>
