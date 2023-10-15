@@ -358,6 +358,7 @@ input:placeholder-shown {
     width: 100%;
     padding: 12px 34px !important;
     background-color: #24282d !important;
+    color: #8c8c8c !important;
 }
 
 #container-login i {
@@ -375,6 +376,7 @@ input:placeholder-shown {
 #container-login input:focus {
     background-color: #24282d !important;
     border-color: #168828 !important;
+    color: #8c8c8c !important;
 }
 
 #container-login input:focus + i {
