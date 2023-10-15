@@ -15,8 +15,8 @@
                 <input type="hidden" th:field="*{id}"/>
                 <input type="hidden" th:field="*{condominio}"/>
                 <div class="form-item">
-                    <input autofocus class="form-control" type="text" th:errorclass="is-invalid"
-                    th:field="*{nome}" placeholder="Nome"/>
+                    <input class="form-control" type="text" th:errorclass="is-invalid"
+                    th:field="*{nome}" placeholder="Nome" autofocus/>
                     <i class="fa fa-user-circle"></i>
                     <div class="invalid-feedback" th:errors="*{nome}"></div>
                 </div>
