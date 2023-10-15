@@ -1,3 +1,9 @@
+/* Import do Font Awesome */
+@font-face {
+	font-family: FontAwesome;
+	src: url(../webfonts/fa-solid-900.ttf);
+}
+
 /* Rodapé fixo */
 html {
 	position: relative;
@@ -16,7 +22,7 @@ body {
 
 /* Margens padrão */
 main {
-	margin-top: 16px;
+	margin-top: 76px;
 	margin-bottom: 16px;
 }
 
@@ -302,6 +308,16 @@ input:placeholder-shown {
 
 .text-primary {
     color: #156622 !important;
+}
+
+.btn-primary, .btn-primary:focus {
+    background-color: #168828 !important;
+    border: 1px solid #156622 !important;
+    color: #ffffff !important;
+}
+
+@page {
+	size: A4 landscape;
 }
 
 .col-login-image {

@@ -137,8 +137,8 @@ public class RelatorioController {
 		model.addAttribute("condominio", condominioService.ler());
 		model.addAttribute("periodo", periodo.toString());
 		model.addAttribute("categorias", categoriaService.listar());
-		model.addAttribute("orcadoRealizadoSintetico", relatorioService.somaOrcadoRealizadoCategorias(periodo));
-		model.addAttribute("orcadoRealizadoAnalitico", relatorioService.somaOrcadoRealizadoSubcategorias(periodo));
+		model.addAttribute("orcamentoRealizadoSintetico", relatorioService.somaOrcadoRealizadoCategorias(periodo));
+		model.addAttribute("orcamentoRealizadoAnalitico", relatorioService.somaOrcadoRealizadoSubcategorias(periodo));
 		model.addAttribute("relatorio", "relatorioOrcamento");
 		return new ModelAndView("fragmentos/layoutRelatorio", model);
 	}
