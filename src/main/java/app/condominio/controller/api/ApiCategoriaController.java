@@ -23,7 +23,7 @@ public class ApiCategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<Page<Categoria>> listarCategorias(@RequestParam("pagina") Optional<Integer> pagina,
                                                     @RequestParam("tamanho") Optional<Integer> tamanho) {
         return new ResponseEntity<>(categoriaService.listarPagina(PageRequest.of(pagina.orElse(1) - 1, tamanho.orElse(20))), HttpStatus.OK);
@@ -34,12 +34,12 @@ public class ApiCategoriaController {
         return new ResponseEntity<>(categoriaService.ler(id), HttpStatus.OK);
     }
 
-    @PostMapping("/cadastrar")
+    @PostMapping
     public ResponseEntity<Categoria> cadastrarCategoria(@Valid @RequestBody Categoria categoria) {
         return new ResponseEntity<>(categoriaService.salvar(categoria), HttpStatus.CREATED);
     }
 
-    @PutMapping("/editar/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Categoria> editarCategoria(@Valid @RequestBody Categoria categoria, @PathVariable("id") Long id) {
         Categoria localizaCategoria = categoriaService.ler(id);
         if (localizaCategoria == null) {
@@ -48,8 +48,8 @@ public class ApiCategoriaController {
         return new ResponseEntity<>(categoriaService.editar(categoria), HttpStatus.OK);
     }
 
-    @DeleteMapping("/excluir/{id}")
-    public void deleteCategoriaCadastro(@PathVariable("id") Long id) {
+    @DeleteMapping("/{id}")
+    public void excluirCategoria(@PathVariable("id") Long id) {
         Categoria localizaCategoria = categoriaService.ler(id);
         if (localizaCategoria == null) {
             categoriaService.excluir(localizaCategoria);

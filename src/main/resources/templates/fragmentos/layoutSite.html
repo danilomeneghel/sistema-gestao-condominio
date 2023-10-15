@@ -18,10 +18,10 @@
 <link rel="stylesheet" th:href="@{/css/scroll.min.css}" />
 <link rel="stylesheet" th:href="@{/css/meu.css}" />
 
-<title th:replace="'site/' + ${conteudo} :: title"></title>
+<title th:replace="'login/' + ${conteudo} :: title"></title>
 </head>
 <body id="site">
-	<th:block th:replace="'site/' + ${conteudo} :: conteudo" />
+	<th:block th:replace="'login/' + ${conteudo} :: conteudo" />
 	<th:block th:replace="fragmentos/rodape :: rodape" />
 
 	<!-- JavaScript -->
@@ -30,6 +30,6 @@
 	<script th:src="@{/js/bootstrap.min.js}"></script>
 	<script th:src="@{/js/scroll.min.js}"></script>
 	<script th:src="@{/js/meu.js}"></script>
-	<th:block th:replace="'site/' + ${conteudo} :: jsAdicional" />
+	<th:block th:replace="'login/' + ${conteudo} :: jsAdicional" />
 </body>
 </html>

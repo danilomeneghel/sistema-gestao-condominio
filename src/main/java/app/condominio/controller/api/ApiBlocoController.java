@@ -23,23 +23,23 @@ public class ApiBlocoController {
     @Autowired
     private BlocoService blocoService;
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<Page<Bloco>> listarBlocos(@RequestParam("pagina") Optional<Integer> pagina,
                                                     @RequestParam("tamanho") Optional<Integer> tamanho) {
         return new ResponseEntity<>(blocoService.listarPagina(PageRequest.of(pagina.orElse(1) - 1, tamanho.orElse(20))), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Bloco> localizaBloco(@PathVariable("id") Long id) {
+    public ResponseEntity<Bloco> localizarBloco(@PathVariable("id") Long id) {
         return new ResponseEntity<>(blocoService.ler(id), HttpStatus.OK);
     }
 
-    @PostMapping("/cadastrar")
+    @PostMapping
     public ResponseEntity<Bloco> cadastrarBloco(@Valid @RequestBody Bloco bloco) {
         return new ResponseEntity<>(blocoService.salvar(bloco), HttpStatus.CREATED);
     }
 
-    @PutMapping("/editar/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Bloco> editarBloco(@Valid @RequestBody Bloco bloco, @PathVariable("id") Long id) {
         Bloco localizaBloco = blocoService.ler(id);
         if (localizaBloco == null) {
@@ -48,8 +48,8 @@ public class ApiBlocoController {
         return new ResponseEntity<>(blocoService.editar(bloco), HttpStatus.OK);
     }
 
-    @DeleteMapping("/excluir/{id}")
-    public void deleteBlocoCadastro(@PathVariable("id") Long id) {
+    @DeleteMapping("/{id}")
+    public void excluirBloco(@PathVariable("id") Long id) {
         Bloco localizaBloco = blocoService.ler(id);
         if (localizaBloco != null) {
             blocoService.excluir(localizaBloco);
