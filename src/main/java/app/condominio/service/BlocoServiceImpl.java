@@ -26,11 +26,12 @@ public class BlocoServiceImpl implements BlocoService {
 	private UsuarioService usuarioService;
 
 	@Override
-	public void salvar(Bloco entidade) {
+	public Bloco salvar(Bloco entidade) {
 		if (entidade.getIdBloco() == null) {
 			padronizar(entidade);
-			blocoDao.save(entidade);
+			return blocoDao.save(entidade);
 		}
+		return null;
 	}
 
 	@Override
@@ -59,9 +60,9 @@ public class BlocoServiceImpl implements BlocoService {
 	}
 
 	@Override
-	public void editar(Bloco entidade) {
+	public Bloco editar(Bloco entidade) {
 		padronizar(entidade);
-		blocoDao.save(entidade);
+		return blocoDao.save(entidade);
 	}
 
 	@Override

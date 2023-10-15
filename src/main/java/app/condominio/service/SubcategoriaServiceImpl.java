@@ -24,10 +24,11 @@ public class SubcategoriaServiceImpl implements SubcategoriaService {
 	private CategoriaService categoriaService;
 
 	@Override
-	public void salvar(Subcategoria entidade) {
+	public Subcategoria salvar(Subcategoria entidade) {
 		if (entidade.getIdSubcategoria() == null) {
-			subcategoriaDao.save(entidade);
+			return subcategoriaDao.save(entidade);
 		}
+		return null;
 	}
 
 	@Override
@@ -69,15 +70,13 @@ public class SubcategoriaServiceImpl implements SubcategoriaService {
 	}
 
 	@Override
-	public void editar(Subcategoria entidade) {
-		subcategoriaDao.save(entidade);
-
+	public Subcategoria editar(Subcategoria entidade) {
+		return subcategoriaDao.save(entidade);
 	}
 
 	@Override
 	public void excluir(Subcategoria entidade) {
 		subcategoriaDao.delete(entidade);
-
 	}
 
 	@Override

@@ -30,11 +30,12 @@ public class CobrancaServiceImpl implements CobrancaService {
 	private UsuarioService usuarioService;
 
 	@Override
-	public void salvar(Cobranca entidade) {
+	public Cobranca salvar(Cobranca entidade) {
 		if (entidade.getIdCobranca() == null) {
 			padronizar(entidade);
-			cobrancaDao.save(entidade);
+			return cobrancaDao.save(entidade);
 		}
+		return null;
 	}
 
 	@Override
@@ -63,15 +64,14 @@ public class CobrancaServiceImpl implements CobrancaService {
 	}
 
 	@Override
-	public void editar(Cobranca entidade) {
+	public Cobranca editar(Cobranca entidade) {
 		padronizar(entidade);
-		cobrancaDao.save(entidade);
+		return cobrancaDao.save(entidade);
 	}
 
 	@Override
 	public void excluir(Cobranca entidade) {
 		cobrancaDao.delete(entidade);
-
 	}
 
 	@Override

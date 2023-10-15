@@ -27,11 +27,12 @@ public class CategoriaServiceImpl implements CategoriaService {
 	private UsuarioService usuarioService;
 
 	@Override
-	public void salvar(Categoria entidade) {
+	public Categoria salvar(Categoria entidade) {
 		if (entidade.getIdCategoria() == null) {
 			padronizar(entidade);
-			categoriaDao.save(entidade);
+			return categoriaDao.save(entidade);
 		}
+		return null;
 	}
 
 	@Override
@@ -77,9 +78,9 @@ public class CategoriaServiceImpl implements CategoriaService {
 	}
 
 	@Override
-	public void editar(Categoria entidade) {
+	public Categoria editar(Categoria entidade) {
 		padronizar(entidade);
-		categoriaDao.save(entidade);
+		return categoriaDao.save(entidade);
 	}
 
 	@Override

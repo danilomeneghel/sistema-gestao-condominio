@@ -42,7 +42,7 @@ public class MovimentoServiceImpl implements MovimentoService {
 	private PeriodoService periodoService;
 
 	@Override
-	public void salvar(Movimento entidade) {
+	public Movimento salvar(Movimento entidade) {
 		if (entidade.getIdMovimento() == null) {
 			padronizar(entidade);
 			List<Movimento> listaSalvar = new ArrayList<>();
@@ -71,7 +71,9 @@ public class MovimentoServiceImpl implements MovimentoService {
 			}
 			listaSalvar.add(entidade);
 			movimentoDao.saveAll(listaSalvar);
+			return entidade;
 		}
+		return null;
 	}
 
 	@Override
@@ -92,7 +94,7 @@ public class MovimentoServiceImpl implements MovimentoService {
 	}
 
 	@Override
-	public void editar(Movimento entidade) {
+	public Movimento editar(Movimento entidade) {
 		padronizar(entidade);
 		List<Movimento> listaSalvar = new ArrayList<>();
 		if (entidade instanceof Lancamento) {
@@ -115,6 +117,7 @@ public class MovimentoServiceImpl implements MovimentoService {
 		}
 		listaSalvar.add(entidade);
 		movimentoDao.saveAll(listaSalvar);
+		return entidade;
 	}
 
 	@Override

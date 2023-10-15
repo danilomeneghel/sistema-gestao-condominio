@@ -30,11 +30,12 @@ public class MoradiaServiceImpl implements MoradiaService {
 	private BlocoService blocoService;
 
 	@Override
-	public void salvar(Moradia entidade) {
+	public Moradia salvar(Moradia entidade) {
 		if (entidade.getIdMoradia() == null) {
 			padronizar(entidade);
-			moradiaDao.save(entidade);
+			return moradiaDao.save(entidade);
 		}
+		return null;
 	}
 
 	@Override
@@ -55,16 +56,15 @@ public class MoradiaServiceImpl implements MoradiaService {
 	}
 
 	@Override
-	public void editar(Moradia entidade) {
+	public Moradia editar(Moradia entidade) {
 		padronizar(entidade);
-		moradiaDao.save(entidade);
+		return moradiaDao.save(entidade);
 		// FIXME Não está excluindo as relações quando não tem mais nenhuma relação
 	}
 
 	@Override
 	public void excluir(Moradia entidade) {
 		moradiaDao.delete(entidade);
-
 	}
 
 	@Override
@@ -119,10 +119,10 @@ public class MoradiaServiceImpl implements MoradiaService {
 	@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
 	public void padronizar(Moradia entidade) {
 		if (entidade.getFracaoIdeal() == null) {
-			entidade.setFracaoIdeal(new Float(0));
+			entidade.setFracaoIdeal(Float.valueOf(0));
 		}
 		if (entidade.getArea() == null) {
-			entidade.setArea(new Float(0));
+			entidade.setArea(Float.valueOf(0));
 		}
 		if (entidade.getVagas() == null) {
 			entidade.setVagas(0);
@@ -134,7 +134,7 @@ public class MoradiaServiceImpl implements MoradiaService {
 				relacao.setMoradia(entidade);
 			}
 			if (relacao.getParticipacaoDono() == null) {
-				relacao.setParticipacaoDono(new Float(0));
+				relacao.setParticipacaoDono(Float.valueOf(0));
 			}
 		}
 

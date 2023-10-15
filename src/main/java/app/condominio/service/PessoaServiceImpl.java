@@ -42,11 +42,12 @@ public class PessoaServiceImpl implements PessoaService {
 	private UsuarioService usuarioService;
 
 	@Override
-	public void salvar(Pessoa entidade) {
+	public Pessoa salvar(Pessoa entidade) {
 		if (entidade.getIdPessoa() == null) {
 			padronizar(entidade);
-			pessoaDao.save(entidade);
+			return pessoaDao.save(entidade);
 		}
+		return null;
 	}
 
 	@Override
@@ -75,9 +76,9 @@ public class PessoaServiceImpl implements PessoaService {
 	}
 
 	@Override
-	public void editar(Pessoa entidade) {
+	public Pessoa editar(Pessoa entidade) {
 		padronizar(entidade);
-		pessoaDao.save(entidade);
+		return pessoaDao.save(entidade);
 	}
 
 	@Override

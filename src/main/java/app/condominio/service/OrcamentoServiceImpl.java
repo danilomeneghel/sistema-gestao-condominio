@@ -29,11 +29,11 @@ public class OrcamentoServiceImpl implements OrcamentoService {
 	private PeriodoService periodoService;
 
 	@Override
-	public void salvar(Orcamento entidade) {
+	public Orcamento salvar(Orcamento entidade) {
 		if (entidade.getIdOrcamento() == null) {
-			orcamentoDao.save(entidade);
+			return orcamentoDao.save(entidade);
 		}
-
+		return null;
 	}
 
 	@Override
@@ -54,9 +54,8 @@ public class OrcamentoServiceImpl implements OrcamentoService {
 	}
 
 	@Override
-	public void editar(Orcamento entidade) {
-		orcamentoDao.save(entidade);
-
+	public Orcamento editar(Orcamento entidade) {
+		return orcamentoDao.save(entidade);
 	}
 
 	@Override

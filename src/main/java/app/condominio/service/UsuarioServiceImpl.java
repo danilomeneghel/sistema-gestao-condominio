@@ -34,11 +34,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 	private PasswordEncoder passwordEncoder;
 
 	@Override
-	public void salvar(Usuario usuario) {
+	public Usuario salvar(Usuario usuario) {
 		if (usuario.getId() == null) {
 			usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
-			usuarioDao.save(usuario);
+			return usuarioDao.save(usuario);
 		}
+		return null;
 	}
 
 	@Override
@@ -66,14 +67,14 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public void editar(Usuario usuario) {
+	public Usuario editar(Usuario usuario) {
 		if (!usuario.getPassword().startsWith("{bcrypt}")) {
 			usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
 		}
 		if (usuario.getAutorizacoes().isEmpty()) {
 			usuario.setAutorizacoes(ler(usuario.getId()).getAutorizacoes());
 		}
-		usuarioDao.save(usuario);
+		return usuarioDao.save(usuario);
 	}
 
 	@Override

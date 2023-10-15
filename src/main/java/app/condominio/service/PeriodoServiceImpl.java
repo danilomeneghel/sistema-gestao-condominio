@@ -27,11 +27,12 @@ public class PeriodoServiceImpl implements PeriodoService {
 	private UsuarioService usuarioService;
 
 	@Override
-	public void salvar(Periodo entidade) {
+	public Periodo salvar(Periodo entidade) {
 		if (entidade.getIdPeriodo() == null) {
 			padronizar(entidade);
-			periodoDao.save(entidade);
+			return periodoDao.save(entidade);
 		}
+		return null;
 	}
 
 	@Override
@@ -74,15 +75,14 @@ public class PeriodoServiceImpl implements PeriodoService {
 	}
 
 	@Override
-	public void editar(Periodo entidade) {
+	public Periodo editar(Periodo entidade) {
 		padronizar(entidade);
-		periodoDao.save(entidade);
+		return periodoDao.save(entidade);
 	}
 
 	@Override
 	public void excluir(Periodo entidade) {
 		periodoDao.delete(entidade);
-
 	}
 
 	@Override

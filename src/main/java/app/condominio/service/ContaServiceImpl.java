@@ -27,13 +27,14 @@ public class ContaServiceImpl implements ContaService {
 	private UsuarioService usuarioService;
 
 	@Override
-	public void salvar(Conta entidade) {
+	public Conta salvar(Conta entidade) {
 		if (entidade.getIdConta() == null) {
 			padronizar(entidade);
-			// LATER fazer esta alteração com trigger
+			// Fazer esta alteração com trigger
 			entidade.setSaldoAtual(entidade.getSaldoInicial());
-			contaDao.save(entidade);
+			return contaDao.save(entidade);
 		}
+		return null;
 	}
 
 	@Override
@@ -62,13 +63,13 @@ public class ContaServiceImpl implements ContaService {
 	}
 
 	@Override
-	public void editar(Conta entidade) {
+	public Conta editar(Conta entidade) {
 		padronizar(entidade);
-		// LATER fazer esta alteração com trigger
+		// Fazer esta alteração com trigger
 		Conta antiga = ler(entidade.getIdConta());
 		entidade.setSaldoAtual(
 				antiga.getSaldoAtual().subtract(antiga.getSaldoInicial()).add(entidade.getSaldoInicial()));
-		contaDao.save(entidade);
+		return contaDao.save(entidade);
 	}
 
 	@Override

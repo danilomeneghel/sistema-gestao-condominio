@@ -12,7 +12,7 @@ public interface CrudService<C, T> {
 	 * @param entidade
 	 *            Entidade a ser persistida no banco de dados
 	 */
-	public void salvar(C entidade);
+	public C salvar(C entidade);
 
 	/**
 	 * @param id
@@ -40,7 +40,7 @@ public interface CrudService<C, T> {
 	 * @param entidade
 	 *            Entidade a ser atualizada no banco de dados
 	 */
-	public void editar(C entidade);
+	public C editar(C entidade);
 
 	/**
 	 * @param entidade

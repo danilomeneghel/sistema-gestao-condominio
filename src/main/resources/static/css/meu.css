@@ -1,16 +1,10 @@
-/* Import do Font Awesome */
-@font-face {
-	font-family: FontAwesome;
-	src: url(../webfonts/fa-solid-900.ttf);
-}
-
-/* Rodapé fixo */
+/* Layout */
 html {
 	position: relative;
 	min-height: 100%;
 }
 body {
-	padding-bottom: 56px; /* Tamanho do rodapé */
+	padding-bottom: 56px;
 }
 .footer {
 	position: absolute;
@@ -24,6 +18,12 @@ body {
 main {
 	margin-top: 76px;
 	margin-bottom: 16px;
+}
+
+/* Import do Font Awesome */
+@font-face {
+	font-family: FontAwesome;
+	src: url(../webfonts/fa-solid-900.ttf);
 }
 
 /* Tabelas customizadas */
@@ -53,7 +53,7 @@ main {
 .form-list th{
 	font-weight:normal;
 }
-@media ( max-width : 767px) {
+@media ( max-width : 768px) {
 	.crud-list .btn span{
 		display:none;
 	}
@@ -63,7 +63,7 @@ main {
 }
 
 /* Paginação */
-@media ( max-width : 767px) {
+@media ( max-width : 768px) {
 	#paginacao span {
 		display:none;
 	}
@@ -166,7 +166,7 @@ fieldset:disabled input::placeholder, fieldset:disabled textarea::placeholder{
 	text-align: center;
 }
 #sidebar.active ul li a {
-	padding: 20px 10px;
+	padding: 18px 10px;
 	text-align: center;
 	font-size: 0.85em;
 }
@@ -191,7 +191,7 @@ fieldset:disabled input::placeholder, fieldset:disabled textarea::placeholder{
 	transform: translateX(50%);
 }
 /* Sidebar celulares */
-@media ( max-width : 767px) {
+@media ( max-width : 768px) {
 	#sidebarCollapse {
 		margin-top: 16px;
 		transition: all 0.3s;
@@ -249,6 +249,7 @@ fieldset:disabled input::placeholder, fieldset:disabled textarea::placeholder{
 		margin-left: 0;
 	}
 }
+
 /* Ajustes para impressão */
 @media print {
 	body {
@@ -314,6 +315,10 @@ input:placeholder-shown {
     background-color: #168828 !important;
     border: 1px solid #156622 !important;
     color: #ffffff !important;
+}
+
+.navbar-brand {
+    margin-left: 10px;
 }
 
 @page {
