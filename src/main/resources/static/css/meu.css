@@ -309,8 +309,8 @@ input:placeholder-shown {
     width: 55%;
     min-height: 100vh;
     float: left;
-    background: url("/images/login-image.jpg") no-repeat;
-    background-size: auto;
+    background: url("/images/login-image.jpg") left center / cover no-repeat;
+    background-position: unset;
     overflow: hidden;
 }
 
@@ -319,8 +319,8 @@ input:placeholder-shown {
     width: 55%;
     min-height: 100vh;
     float: left;
-    background: url("/images/login-image2.jpg") no-repeat;
-    background-size: auto;
+    background: url("/images/login-image2.jpg") left center / cover no-repeat;
+    background-position: unset;
     overflow: hidden;
 }
 
@@ -348,12 +348,14 @@ input:placeholder-shown {
 }
 
 #container-login .form-item {
+    width: 100% !important;
     margin: 0px 0px !important;
     padding: 8px 0px !important;
 }
 
 #container-login input {
     outline: 0px;
+    width: 100%;
     padding: 12px 34px !important;
     background-color: #24282d !important;
 }
@@ -379,10 +381,11 @@ input:placeholder-shown {
     color: #168828 !important;
 }
 
-#container-login .btn-primary {
+#container-login .btn-primary, #container-login .btn-primary:focus {
     padding: 12px !important;
     background-color: #168828 !important;
     border: 1px solid #156622 !important;
+    color: #ffffff !important;
 }
 
 #container-login .btn-primary:hover {
