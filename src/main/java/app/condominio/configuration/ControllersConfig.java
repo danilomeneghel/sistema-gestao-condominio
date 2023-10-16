@@ -1,4 +1,4 @@
-package app.condominio;
+package app.condominio.configuration;
 
 import app.condominio.domain.Usuario;
 import app.condominio.service.UsuarioService;

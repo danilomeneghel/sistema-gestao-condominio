@@ -2,7 +2,6 @@ package app.condominio.service;
 
 import app.condominio.dao.UsuarioDao;
 import app.condominio.domain.Usuario;
-import app.condominio.domain.enums.Autorizacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -70,9 +69,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 		if (!usuario.getPassword().startsWith("{bcrypt}")) {
 			usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
 		}
-		if (usuario.getAutorizacoes().isEmpty()) {
-			usuario.setAutorizacoes(ler(usuario.getId()).getAutorizacoes());
-		}
 		return usuarioDao.save(usuario);
 	}
 
@@ -83,19 +79,19 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public Usuario salvarSindico(Usuario usuario) {
-		usuario.getAutorizacoes().add(Autorizacao.SINDICO);
+		usuario.setRoles("ROLE_SINDICO");
 		return salvar(usuario);
 	}
 
 	@Override
 	public Usuario salvarCondomino(Usuario usuario) {
-		usuario.getAutorizacoes().add(Autorizacao.CONDOMINO);
+		usuario.setRoles("ROLE_CONDOMINO");
 		return salvar(usuario);
 	}
 
 	@Override
 	public Usuario salvarAdmin(Usuario usuario) {
-		usuario.getAutorizacoes().add(Autorizacao.ADMIN);
+		usuario.setRoles("ROLE_ADMIN");
 		return salvar(usuario);
 	}
 

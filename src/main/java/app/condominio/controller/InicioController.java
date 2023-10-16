@@ -1,6 +1,5 @@
 package app.condominio.controller;
 
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,14 +21,19 @@ public class InicioController {
         return new ModelAndView("fragmentos/layoutSite", "conteudo", "inicio");
     }
 
-    @GetMapping({"/login", "/entrar"})
+    @GetMapping("/login")
     public ModelAndView preLogin() {
         return new ModelAndView("fragmentos/layoutSite", "conteudo", "inicio");
     }
 
-    @GetMapping("/autenticado")
+    @GetMapping("/entrar")
+    public String posLogin() {
+        return "redirect:/sindico";
+    }
+
+    /*@GetMapping("/autenticado")
     public String posLogin(Authentication authentication) {
-        /*String retorno = "redirect:/inicio?erro";
+        String retorno = "redirect:/inicio?erro";
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("SINDICO"))) {
             retorno = "redirect:/sindico";
@@ -37,9 +41,9 @@ public class InicioController {
             retorno = "redirect:/condomino";
         } else if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("ADMIN"))) {
             retorno = "redirect:/admin";
-        }*/
-        return "redirect:/sindico";
-    }
+        }
+        return retorno;
+    }*/
 
     @PostMapping("/sair")
     public String logout(HttpSession session) {

@@ -1,15 +1,11 @@
 package app.condominio.domain;
 
-import app.condominio.domain.enums.Autorizacao;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 @SuppressWarnings("serial")
 @Entity
@@ -43,13 +39,8 @@ public class Usuario implements Serializable {
 	@Size(min = 1, max = 100)
 	@Email
 	private String email;
-	// LATER validar email ao criar conta
 
-	@ElementCollection(targetClass = Autorizacao.class)
-	@CollectionTable(name = "autorizacoes", joinColumns = @JoinColumn(name = "id_usuario"))
-	@Enumerated(EnumType.STRING)
-	@Column(name = "autorizacao")
-	private Set<Autorizacao> autorizacoes = new HashSet<>();
+	private String roles;
 
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idcondominio")
@@ -119,12 +110,12 @@ public class Usuario implements Serializable {
 		this.email = email;
 	}
 
-	public Set<Autorizacao> getAutorizacoes() {
-		return autorizacoes;
+	public String getRoles() {
+		return roles;
 	}
 
-	public void setAutorizacoes(Set<Autorizacao> autorizacoes) {
-		this.autorizacoes = autorizacoes;
+	public void setRoles(String roles) {
+		this.roles = roles;
 	}
 
 	public Condominio getCondominio() {
