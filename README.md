@@ -1,6 +1,6 @@
-# Gestão para Condomínios
+# Gestão para Condomínio
 
-Sistema para gestão de condomínios desenvolvido em Java com Spring Boot.
+Sistema para gestão de condomínio desenvolvido em Java com Spring Boot e API REST.
 
 ## Módulos
 
@@ -66,7 +66,13 @@ $ mvn clean spring-boot:run -Dspring-boot.run.profiles=dev
 Para acessar o sistema utilize o seguinte endereço:<br>
 http://localhost:8080/
 
-Depois é só criar um usuário e senha para poder logar no sistema.
+Usuário: admin<br>
+Senha: admin
+
+## Acesso ao Swagger
+
+Para acessar o Swagger utilize o seguinte endereço:<br>
+http://localhost:8080/swagger-ui.html
 
 ## Licença
 
@@ -86,3 +92,9 @@ Projeto licenciado sob <a href="LICENSE">The MIT License (MIT)</a>.<br><br>
 ![Screenshots](screenshots/screenshot10.png) <br><br>
 ![Screenshots](screenshots/screenshot11.png) <br><br>
 ![Screenshots](screenshots/screenshot12.png) <br><br>
+
+
+Desenvolvido por<br>
+Danilo Meneghel<br>
+danilo.meneghel@gmail.com<br>
+http://danilomeneghel.github.io/<br>

@@ -74,7 +74,7 @@
                         </div>
                     </li>
                     <li class="list-group-item collapse show" id="L"
-                        th:if="${#ctx.tipo == T(app.condominio.domain.enums.TipoClasseMovimento).L}">
+                        th:if="${#ctx.tipo == T(condominio.domain.enums.TipoClasseMovimento).L}">
                         <p class="text-primary">
                             <i class="fas fa-coins"></i> Detalhes do lançamento
                         </p>
@@ -109,7 +109,7 @@
                         </div>
                     </li>
                     <li class="list-group-item collapse" id="L"
-                        th:unless="${#ctx.tipo == T(app.condominio.domain.enums.TipoClasseMovimento).L}">
+                        th:unless="${#ctx.tipo == T(condominio.domain.enums.TipoClasseMovimento).L}">
                         <p class="text-primary">
                             <i class="fas fa-coins"></i> Detalhes do lançamento
                         </p>
@@ -142,7 +142,7 @@
                         </div>
                     </li>
                     <li class="list-group-item collapse show" id="T"
-                        th:if="${#ctx.tipo == T(app.condominio.domain.enums.TipoClasseMovimento).T}">
+                        th:if="${#ctx.tipo == T(condominio.domain.enums.TipoClasseMovimento).T}">
                         <p class="text-primary">
                             <i class="fas fa-exchange-alt"></i> Detalhes da transferência
                         </p>
@@ -174,7 +174,7 @@
                         </div>
                     </li>
                     <li class="list-group-item collapse" id="T"
-                        th:unless="${#ctx.tipo == T(app.condominio.domain.enums.TipoClasseMovimento).T}">
+                        th:unless="${#ctx.tipo == T(condominio.domain.enums.TipoClasseMovimento).T}">
                         <p class="text-primary">
                             <i class="fas fa-exchange-alt"></i> Detalhes da transferência
                         </p>

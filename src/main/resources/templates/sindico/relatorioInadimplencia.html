@@ -40,7 +40,7 @@
                     <small th:text="*{endereco} +', '+ *{numeroEnd}"></small><small
                         th:unless="${condominio.complementoEnd==null}" th:text="', '+ *{complementoEnd}"></small><br/>
                     <small th:text="*{bairro} + ', ' + *{cidade} + ' - ' + *{estado.nome}"></small><br/> <small
-                        th:text="'Síndico: ' + *{sindico.nomeCompleto()}"></small>
+                        th:text="'Síndico: ' + *{sindico.nome()}"></small>
                 </p>
             </div>
             <div id="relatorio_titulo" class="text-center">

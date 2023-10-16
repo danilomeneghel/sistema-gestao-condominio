@@ -17,13 +17,17 @@ spring:
     url: jdbc:mysql://${DATASOURCE_HOST}:${DATASOURCE_PORT}/${DATASOURCE_NAME}?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&characterEncoding=UTF-8
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         jdbc:
           time_zone: ${SPRING_JPA_TIMEZONE}
     show-sql: ${SPRING_JPA_SHOW_SQL}
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
   mail:
     host: ${MAIL_HOST}
     username: ${MAIL_USERNAME}

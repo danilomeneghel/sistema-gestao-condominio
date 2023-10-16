@@ -16,16 +16,9 @@
                 <input type="hidden" th:field="*{condominio}"/>
                 <div class="form-item">
                     <input class="form-control" type="text" th:errorclass="is-invalid"
-                    th:field="*{nome}" placeholder="Nome" autofocus/>
+                    th:field="*{nome}" placeholder="Nome Completo" autofocus/>
                     <i class="fa fa-user-circle"></i>
                     <div class="invalid-feedback" th:errors="*{nome}"></div>
-                </div>
-                <div class="form-item">
-                    <input class="form-control" type="text" th:errorclass="is-invalid"
-                           th:field="*{sobrenome}"
-                    placeholder="Sobrenome"/>
-                    <i class="fa fa-user-circle"></i>
-                    <div class="invalid-feedback" th:errors="*{sobrenome}"></div>
                 </div>
                 <div class="form-item">
                     <input class="form-control" type="text" th:errorclass="is-invalid"

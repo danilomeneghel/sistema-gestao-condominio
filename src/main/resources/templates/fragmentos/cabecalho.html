@@ -12,7 +12,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mr-auto"></div>
                 <div sec:authorize="isAnonymous()">
-                    <form class="form-inline mt-2 mt-md-0" th:action="@{/entrar}" method="get">
+                    <form class="form-inline mt-2 mt-md-0" th:action="@{/login}" method="get">
                         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Entrar</button>
                     </form>
                 </div>

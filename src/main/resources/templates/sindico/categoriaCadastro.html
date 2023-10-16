@@ -16,11 +16,11 @@
         <p th:if="${haCondominio}"
            th:text="${categoria.idCategoria == null} ? 'Ao salvar, uma nova categoria será criada no condomínio.' : (${param.somenteLeitura} ? 'As informações não podem ser alteradas neste modo.' :  'Ao salvar, as informações da categoria atual serão atualizadas.')"></p>
         <form th:class="${#ctx.classe == ''}?'needs-validation'" novalidate
-              th:action="@{/sindico/{sub}categorias/cadastro/(sub=(${#ctx.classe == T(app.condominio.domain.enums.TipoClasseCategoria).S} ? 'sub' : ''))}"
+              th:action="@{/sindico/{sub}categorias/cadastro/(sub=(${#ctx.classe == T(condominio.domain.enums.TipoClasseCategoria).S} ? 'sub' : ''))}"
               th:if="${haCondominio}" th:object="${categoria}"
               th:method="${categoria.idCategoria == null} ? post : put">
             <fieldset th:disabled="${param.somenteLeitura}" class="mb-3">
-                <input th:if="${#ctx.classe == T(app.condominio.domain.enums.TipoClasseCategoria).C}" type="hidden"
+                <input th:if="${#ctx.classe == T(condominio.domain.enums.TipoClasseCategoria).C}" type="hidden"
                        th:field="*{condominio}"/> <input type="hidden" th:field="*{idCategoria}"/>
                 <ul class="list-group list-group-flush" id="accordion">
                     <li class="list-group-item">
@@ -42,7 +42,7 @@
                                 <option th:each="t : ${tiposClasseCategoria}" th:value="${t}" th:text="${t.nome}"
                                         th:selected="${t == #ctx.classe}" data-toggle="collapse"
                                         th:data-target="'#'+ ${t}"
-                                        th:data-form-action="@{/sindico/{sub}categorias/cadastro/(sub=(${t == T(app.condominio.domain.enums.TipoClasseCategoria).S} ? 'sub' : ''))}"></option>
+                                        th:data-form-action="@{/sindico/{sub}categorias/cadastro/(sub=(${t == T(condominio.domain.enums.TipoClasseCategoria).S} ? 'sub' : ''))}"></option>
                             </select>
                                 <div class="invalid-feedback">Campo obrigatório.</div>
                                 <small th:text="${categoria.idCategoria != null} ? 'Este campo não pode ser modificado.' : _">Após
@@ -67,7 +67,7 @@
                         </div>
                     </li>
                     <li class="list-group-item collapse show" id="C"
-                        th:if="${#ctx.classe == T(app.condominio.domain.enums.TipoClasseCategoria).C}">
+                        th:if="${#ctx.classe == T(condominio.domain.enums.TipoClasseCategoria).C}">
                         <p class="text-primary">
                             <i class="fas fa-tasks"></i> Dados da categoria sintética
                         </p>
@@ -93,7 +93,7 @@
                         </div>
                     </li>
                     <li class="list-group-item collapse" id="C"
-                        th:unless="${#ctx.classe == T(app.condominio.domain.enums.TipoClasseCategoria).C}">
+                        th:unless="${#ctx.classe == T(condominio.domain.enums.TipoClasseCategoria).C}">
                         <p class="text-primary">
                             <i class="fas fa-tasks"></i> Dados da categoria sintética
                         </p>

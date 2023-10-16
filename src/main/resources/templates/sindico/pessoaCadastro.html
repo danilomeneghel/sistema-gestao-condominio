@@ -43,7 +43,7 @@
                         </div>
                     </li>
                     <li class="list-group-item collapse show" id="PF"
-                        th:if="${#ctx.tipo == T(app.condominio.domain.enums.TipoPessoa).F}">
+                        th:if="${#ctx.tipo == T(condominio.domain.enums.TipoPessoa).F}">
                         <p class="text-primary">
                             <i class="fas fa-user"></i> Informações principais
                         </p>
@@ -91,7 +91,7 @@
                         </div>
                     </li>
                     <li class="list-group-item collapse" id="PF"
-                        th:unless="${#ctx.tipo == T(app.condominio.domain.enums.TipoPessoa).F}">
+                        th:unless="${#ctx.tipo == T(condominio.domain.enums.TipoPessoa).F}">
                         <p class="text-primary">
                             <i class="fas fa-user"></i> Informações principais
                         </p>
@@ -133,7 +133,7 @@
                         </div>
                     </li>
                     <li class="list-group-item collapse show" id="PJ"
-                        th:if="${#ctx.tipo == T(app.condominio.domain.enums.TipoPessoa).J}">
+                        th:if="${#ctx.tipo == T(condominio.domain.enums.TipoPessoa).J}">
                         <p class="text-primary">
                             <i class="fas fa-user-tie"></i> Informações principais
                         </p>
@@ -189,7 +189,7 @@
                         </div>
                     </li>
                     <li class="list-group-item collapse" id="PJ"
-                        th:unless="${#ctx.tipo == T(app.condominio.domain.enums.TipoPessoa).J}">
+                        th:unless="${#ctx.tipo == T(condominio.domain.enums.TipoPessoa).J}">
                         <p class="text-primary">
                             <i class="fas fa-user-tie"></i> Informações principais
                         </p>
