@@ -1,8 +1,6 @@
 package app.condominio.controller;
 
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,29 +22,29 @@ public class InicioController {
         return new ModelAndView("fragmentos/layoutSite", "conteudo", "inicio");
     }
 
-    @GetMapping({"/entrar"})
+    @GetMapping({"/login", "/entrar"})
     public ModelAndView preLogin() {
         return new ModelAndView("fragmentos/layoutSite", "conteudo", "inicio");
     }
 
     @GetMapping("/autenticado")
     public String posLogin(Authentication authentication) {
-        String retorno = "redirect:/inicio?erro";
+        /*String retorno = "redirect:/inicio?erro";
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("SINDICO"))) {
             retorno = "redirect:/sindico";
-        } else if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("MORADOR"))) {
-            retorno = "redirect:/morador";
+        } else if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("CONDOMINO"))) {
+            retorno = "redirect:/condomino";
         } else if (userDetails.getAuthorities().contains(new SimpleGrantedAuthority("ADMIN"))) {
             retorno = "redirect:/admin";
-        }
-        return retorno;
+        }*/
+        return "redirect:/sindico";
     }
 
     @PostMapping("/sair")
     public String logout(HttpSession session) {
         session.invalidate();
-        return "redirect:/entrar?sair";
+        return "redirect:/login?sair";
     }
 
 }

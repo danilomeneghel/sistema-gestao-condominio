@@ -1,8 +1,9 @@
 package app.condominio.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import app.condominio.dao.CategoriaDao;
+import app.condominio.domain.Categoria;
+import app.condominio.domain.Condominio;
+import app.condominio.domain.enums.TipoCategoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,10 +12,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 
-import app.condominio.dao.CategoriaDao;
-import app.condominio.domain.Categoria;
-import app.condominio.domain.Condominio;
-import app.condominio.domain.enums.TipoCategoria;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional

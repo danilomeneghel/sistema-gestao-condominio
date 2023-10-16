@@ -1,30 +1,16 @@
 package app.condominio.service;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.YearMonth;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
-
+import app.condominio.domain.*;
+import app.condominio.domain.enums.TipoCategoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import app.condominio.domain.Categoria;
-import app.condominio.domain.Cobranca;
-import app.condominio.domain.Conta;
-import app.condominio.domain.Moradia;
-import app.condominio.domain.Movimento;
-import app.condominio.domain.Orcamento;
-import app.condominio.domain.Periodo;
-import app.condominio.domain.Subcategoria;
-import app.condominio.domain.enums.TipoCategoria;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.YearMonth;
+import java.util.*;
 
 @Service
 @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)

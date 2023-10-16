@@ -4,11 +4,11 @@ import app.condominio.domain.Usuario;
 
 public interface UsuarioService extends CrudService<Usuario, Long> {
 
-	public void salvarSindico(Usuario usuario);
+	public Usuario salvarSindico(Usuario usuario);
 
-	public void salvarCondomino(Usuario usuario);
+	public Usuario salvarCondomino(Usuario usuario);
 
-	public void salvarAdmin(Usuario usuario);
+	public Usuario salvarAdmin(Usuario usuario);
 
 	public Usuario ler(String username);
 

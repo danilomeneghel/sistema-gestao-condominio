@@ -1,6 +1,6 @@
 package app.condominio.domain;
 
-import java.text.ParseException;
+import app.condominio.domain.validators.CNPJ;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,8 +9,7 @@ import javax.persistence.Table;
 import javax.swing.text.MaskFormatter;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
-import app.condominio.domain.validators.CNPJ;
+import java.text.ParseException;
 
 @SuppressWarnings("serial")
 @Entity

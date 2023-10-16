@@ -1,7 +1,5 @@
 package app.condominio;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +10,8 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
+import javax.sql.DataSource;
+
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -20,32 +20,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // @formatter:off
 		http.authorizeRequests()
-			//.antMatchers("/","/js/**","/css/**","/imagens/**","/webfonts/**").permitAll()
-			.antMatchers("/sindico/**").hasAuthority("SINDICO")// .access("hasRole('ROLE_SINDICO')")
-			.antMatchers("/condomino/**").hasAuthority("CONDOMINO")// .access("hasRole('ROLE_MORADOR')")
-			.antMatchers("/admin/**").hasAuthority("ADMIN")// .access("hasRole('ROLE_MORADOR')")
-			.antMatchers("/autenticado/**", "/conta/cadastro/**", "/api/**", "/swagger-ui**").authenticated()
-			//.antMatchers("/conta/cadastrar/**","/entrar/**").anonymous()
-			//.anyRequest().authenticated()
+			.antMatchers("/","/js/**","/css/**","/imagens/**","/webfonts/**").permitAll()
+			.antMatchers("/sindico/**", "/conta/cadastro/**", "/api/**", "/swagger-ui/**").authenticated()
+			//.antMatchers("/sindico/**", "/conta/cadastro/**").hasAuthority("SINDICO")// .access("hasRole('ROLE_SINDICO')")
+			//.antMatchers("/condomino/**").hasAuthority("CONDOMINO")// .access("hasRole('ROLE_CONDOMINO')")
+			//.antMatchers("/admin/**", "/api/**", "/swagger-ui/**").hasAuthority("ADMIN")// .access("hasRole('ROLE_ADMIN')")
+			.antMatchers("/autenticado/**").authenticated()
 		.and().formLogin()
 		  	.loginPage("/entrar")
-		  	.failureUrl("/entrar?erro")
+		  	.failureUrl("/login?erro")
 		  	.defaultSuccessUrl("/autenticado")
 		  	.usernameParameter("username").passwordParameter("password")
-		//.and().logout()
-			//.logoutSuccessUrl("/entrar?sair")
-			//.logoutUrl("/sair")
-			//.invalidateHttpSession(true)
-			//.clearAuthentication(true)
-		//.and().exceptionHandling()
-			//.accessDeniedPage("/erro")
+		.and().logout()
+			.logoutSuccessUrl("/login?sair")
+			.logoutUrl("/sair")
+			.invalidateHttpSession(true)
+			.clearAuthentication(true)
 		.and().rememberMe()
 		  	.tokenRepository(persistentTokenRepository())
 		  	.tokenValiditySeconds(120960)
 		.and().csrf();
-		// @formatter:on
     }
 
     @Override
@@ -55,9 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authoritiesByUsernameQuery(
                         "select username,autorizacao from usuarios join autorizacoes on id = id_usuario where username=?");
     }
-    // LATER implementar meu próprio UserDetailsService para mostrar primeiro nome
-    // do usuário no site
-    // https://stackoverflow.com/questions/17297322/in-spring-how-to-print-user-first-name-and-last-name-from-secauthentication-p
+    // LATER implementar meu próprio UserDetailsService para mostrar primeiro nome do usuário no site
 
     @Bean
     public PersistentTokenRepository persistentTokenRepository() {

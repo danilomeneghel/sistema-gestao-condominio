@@ -1,19 +1,18 @@
 package app.condominio.dao;
 
-import java.math.BigDecimal;
-import java.util.Collection;
-import java.util.List;
-
+import app.condominio.domain.Orcamento;
+import app.condominio.domain.Periodo;
+import app.condominio.domain.Subcategoria;
+import app.condominio.domain.enums.TipoCategoria;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
-import app.condominio.domain.Orcamento;
-import app.condominio.domain.Periodo;
-import app.condominio.domain.Subcategoria;
-import app.condominio.domain.enums.TipoCategoria;
+import java.math.BigDecimal;
+import java.util.Collection;
+import java.util.List;
 
 public interface OrcamentoDao extends PagingAndSortingRepository<Orcamento, Long> {
 

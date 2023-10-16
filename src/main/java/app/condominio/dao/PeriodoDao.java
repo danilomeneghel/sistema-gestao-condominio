@@ -1,13 +1,12 @@
 package app.condominio.dao;
 
-import java.time.LocalDate;
-
+import app.condominio.domain.Condominio;
+import app.condominio.domain.Periodo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import app.condominio.domain.Condominio;
-import app.condominio.domain.Periodo;
+import java.time.LocalDate;
 
 public interface PeriodoDao extends PagingAndSortingRepository<Periodo, Long> {
 

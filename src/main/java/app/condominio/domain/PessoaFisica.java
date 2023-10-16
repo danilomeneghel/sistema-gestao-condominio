@@ -1,21 +1,15 @@
 package app.condominio.domain;
 
-import java.text.ParseException;
-import java.time.LocalDate;
+import app.condominio.domain.enums.Genero;
+import app.condominio.domain.validators.CPF;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.swing.text.MaskFormatter;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
-import app.condominio.domain.enums.Genero;
-import app.condominio.domain.validators.CPF;
+import java.text.ParseException;
+import java.time.LocalDate;
 
 @SuppressWarnings("serial")
 @Entity

@@ -1,21 +1,5 @@
 package app.condominio.controller;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.SortedMap;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
 import app.condominio.domain.Cobranca;
 import app.condominio.domain.Moradia;
 import app.condominio.domain.Movimento;
@@ -25,6 +9,17 @@ import app.condominio.service.CategoriaService;
 import app.condominio.service.CondominioService;
 import app.condominio.service.PeriodoService;
 import app.condominio.service.RelatorioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.SortedMap;
 
 @Controller
 @RequestMapping("sindico/relatorios")

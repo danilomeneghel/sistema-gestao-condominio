@@ -1,18 +1,17 @@
 package app.condominio.dao;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.List;
-
+import app.condominio.domain.Cobranca;
+import app.condominio.domain.Condominio;
+import app.condominio.domain.Moradia;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
-import app.condominio.domain.Cobranca;
-import app.condominio.domain.Condominio;
-import app.condominio.domain.Moradia;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
 
 public interface CobrancaDao extends PagingAndSortingRepository<Cobranca, Long> {
 

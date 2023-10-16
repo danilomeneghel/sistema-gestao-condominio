@@ -1,36 +1,23 @@
 package app.condominio.controller;
 
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
-
-import javax.validation.Valid;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
-import app.condominio.domain.Categoria;
-import app.condominio.domain.Conta;
-import app.condominio.domain.Lancamento;
-import app.condominio.domain.Movimento;
-import app.condominio.domain.Transferencia;
+import app.condominio.domain.*;
 import app.condominio.domain.enums.TipoCategoria;
 import app.condominio.domain.enums.TipoClasseMovimento;
 import app.condominio.service.CategoriaService;
 import app.condominio.service.ContaService;
 import app.condominio.service.MovimentoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping({ "sindico/movimentos", "sindico/lancamentos" })

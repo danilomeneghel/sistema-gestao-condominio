@@ -1,12 +1,11 @@
 package app.condominio.dao;
 
-import java.util.Collection;
-import java.util.List;
-
-import org.springframework.data.repository.PagingAndSortingRepository;
-
 import app.condominio.domain.Categoria;
 import app.condominio.domain.Subcategoria;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import java.util.Collection;
+import java.util.List;
 
 public interface SubcategoriaDao extends PagingAndSortingRepository<Subcategoria, Long> {
 

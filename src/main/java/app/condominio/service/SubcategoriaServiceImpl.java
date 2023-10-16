@@ -1,7 +1,7 @@
 package app.condominio.service;
 
-import java.util.List;
-
+import app.condominio.dao.SubcategoriaDao;
+import app.condominio.domain.Subcategoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,8 +10,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 
-import app.condominio.dao.SubcategoriaDao;
-import app.condominio.domain.Subcategoria;
+import java.util.List;
 
 @Service
 @Transactional

@@ -1,16 +1,11 @@
 package app.condominio.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import app.condominio.domain.enums.TipoContaBancaria;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import app.condominio.domain.enums.TipoContaBancaria;
 
 @SuppressWarnings("serial")
 @Entity

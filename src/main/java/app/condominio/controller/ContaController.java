@@ -1,30 +1,21 @@
 package app.condominio.controller;
 
-import java.math.BigDecimal;
-import java.util.Optional;
-
-import javax.validation.Valid;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
 import app.condominio.domain.Conta;
 import app.condominio.domain.ContaBancaria;
 import app.condominio.domain.enums.TipoConta;
 import app.condominio.domain.enums.TipoContaBancaria;
 import app.condominio.service.ContaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
+import java.math.BigDecimal;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("sindico/contas")
@@ -107,7 +98,6 @@ public class ContaController {
 		return new ModelAndView("redirect:/sindico/contas");
 	}
 
-	// @PutMapping({ "/cadastro/CX", "/cadastro" })
 	@PutMapping(value = "/cadastro", params = { "CX" })
 	public ModelAndView putContaCadastro(@Valid @ModelAttribute("conta") Conta conta, BindingResult validacao,
 			ModelMap model) {
@@ -121,7 +111,6 @@ public class ContaController {
 		return new ModelAndView("redirect:/sindico/contas");
 	}
 
-	// @PutMapping("/cadastro/BC")
 	@PutMapping(value = "/cadastro", params = { "BC" })
 	public ModelAndView putContaBancariaCadastro(@Valid @ModelAttribute("conta") ContaBancaria conta,
 			BindingResult validacao, ModelMap model) {

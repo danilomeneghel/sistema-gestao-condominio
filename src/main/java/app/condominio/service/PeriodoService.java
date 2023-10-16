@@ -1,8 +1,8 @@
 package app.condominio.service;
 
-import java.time.LocalDate;
-
 import app.condominio.domain.Periodo;
+
+import java.time.LocalDate;
 
 public interface PeriodoService extends CrudService<Periodo, Long> {
 

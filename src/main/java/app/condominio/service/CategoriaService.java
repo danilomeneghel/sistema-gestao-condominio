@@ -1,8 +1,8 @@
 package app.condominio.service;
 
-import java.util.List;
-
 import app.condominio.domain.Categoria;
+
+import java.util.List;
 
 public interface CategoriaService extends CrudService<Categoria, Long> {
 

@@ -1,10 +1,10 @@
 package app.condominio.service;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.validation.BindingResult;
+
+import java.util.List;
 
 public interface CrudService<C, T> {
 

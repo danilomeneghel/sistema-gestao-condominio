@@ -1,18 +1,17 @@
 package app.condominio.dao;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.Collection;
-import java.util.List;
-
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.data.repository.query.Param;
-
 import app.condominio.domain.Conta;
 import app.condominio.domain.Lancamento;
 import app.condominio.domain.Periodo;
 import app.condominio.domain.Subcategoria;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Collection;
+import java.util.List;
 
 public interface LancamentoDao extends PagingAndSortingRepository<Lancamento, Long> {
 

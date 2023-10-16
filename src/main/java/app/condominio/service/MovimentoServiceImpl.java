@@ -1,11 +1,9 @@
 package app.condominio.service;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
+import app.condominio.dao.LancamentoDao;
+import app.condominio.dao.MovimentoDao;
+import app.condominio.domain.*;
+import app.condominio.domain.enums.TipoCategoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,16 +12,11 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 
-import app.condominio.dao.LancamentoDao;
-import app.condominio.dao.MovimentoDao;
-import app.condominio.domain.Categoria;
-import app.condominio.domain.Conta;
-import app.condominio.domain.Lancamento;
-import app.condominio.domain.Movimento;
-import app.condominio.domain.Periodo;
-import app.condominio.domain.Subcategoria;
-import app.condominio.domain.Transferencia;
-import app.condominio.domain.enums.TipoCategoria;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Service
 @Transactional

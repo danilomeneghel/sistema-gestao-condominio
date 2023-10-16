@@ -1,16 +1,11 @@
 package app.condominio.service;
 
+import app.condominio.domain.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
-
-import app.condominio.domain.Categoria;
-import app.condominio.domain.Conta;
-import app.condominio.domain.Lancamento;
-import app.condominio.domain.Movimento;
-import app.condominio.domain.Periodo;
-import app.condominio.domain.Subcategoria;
 
 public interface MovimentoService extends CrudService<Movimento, Long> {
 

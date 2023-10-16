@@ -1,9 +1,8 @@
 package app.condominio.dao;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
-
 import app.condominio.domain.Condominio;
 import app.condominio.domain.PessoaFisica;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface PessoaFisicaDao extends PagingAndSortingRepository<PessoaFisica, Long> {
 

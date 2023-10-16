@@ -1,9 +1,9 @@
 package app.condominio.service;
 
+import app.condominio.domain.Cobranca;
+
 import java.math.BigDecimal;
 import java.util.List;
-
-import app.condominio.domain.Cobranca;
 
 public interface CobrancaService extends CrudService<Cobranca, Long> {
 

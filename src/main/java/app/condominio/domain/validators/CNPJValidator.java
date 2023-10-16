@@ -1,9 +1,8 @@
 package app.condominio.domain.validators;
 
-import java.util.InputMismatchException;
-
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import java.util.InputMismatchException;
 
 public class CNPJValidator implements ConstraintValidator<CNPJ, String> {
 

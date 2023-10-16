@@ -1,9 +1,8 @@
 package app.condominio.service;
 
-import java.util.Calendar;
-import java.util.List;
-import java.util.TimeZone;
-
+import app.condominio.dao.UsuarioDao;
+import app.condominio.domain.Usuario;
+import app.condominio.domain.enums.Autorizacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,9 +15,9 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 
-import app.condominio.dao.UsuarioDao;
-import app.condominio.domain.Usuario;
-import app.condominio.domain.enums.Autorizacao;
+import java.util.Calendar;
+import java.util.List;
+import java.util.TimeZone;
 
 @Service
 @Transactional
@@ -83,21 +82,21 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public void salvarSindico(Usuario usuario) {
+	public Usuario salvarSindico(Usuario usuario) {
 		usuario.getAutorizacoes().add(Autorizacao.SINDICO);
-		salvar(usuario);
+		return salvar(usuario);
 	}
 
 	@Override
-	public void salvarCondomino(Usuario usuario) {
+	public Usuario salvarCondomino(Usuario usuario) {
 		usuario.getAutorizacoes().add(Autorizacao.CONDOMINO);
-		salvar(usuario);
+		return salvar(usuario);
 	}
 
 	@Override
-	public void salvarAdmin(Usuario usuario) {
+	public Usuario salvarAdmin(Usuario usuario) {
 		usuario.getAutorizacoes().add(Autorizacao.ADMIN);
-		salvar(usuario);
+		return salvar(usuario);
 	}
 
 	@Override
@@ -160,9 +159,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 		}
 		// VALIDAÇÕES EM AMBOS
 		// Deve aceitar os termos
-		if (!usuario.getAtivo()) {
+		/*if (!usuario.getAtivo()) {
 			validacao.rejectValue("ativo", "AssertTrue");
-		}
+		}*/
+		usuario.setAtivo(true);
 	}
 
 	@Override

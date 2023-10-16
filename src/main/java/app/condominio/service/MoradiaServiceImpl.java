@@ -1,10 +1,10 @@
 package app.condominio.service;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
+import app.condominio.dao.MoradiaDao;
+import app.condominio.domain.Moradia;
+import app.condominio.domain.Pessoa;
+import app.condominio.domain.Relacao;
+import app.condominio.domain.enums.TipoRelacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,11 +13,10 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 
-import app.condominio.dao.MoradiaDao;
-import app.condominio.domain.Moradia;
-import app.condominio.domain.Pessoa;
-import app.condominio.domain.Relacao;
-import app.condominio.domain.enums.TipoRelacao;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 @Service
 @Transactional
