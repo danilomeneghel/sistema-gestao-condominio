@@ -161,8 +161,8 @@ fieldset:disabled input::placeholder, fieldset:disabled textarea::placeholder{
 }
 /*Sidebar comprimido pequeno*/
 #sidebar.active {
-	min-width: 80px;
-	max-width: 80px;
+	min-width: 100px;
+	max-width: 100px;
 	text-align: center;
 }
 #sidebar.active ul li a {
@@ -317,8 +317,43 @@ input:placeholder-shown {
     color: #ffffff !important;
 }
 
+#navbarTop {
+    background-color: #f2f0f0 !important;
+}
+
 .navbar-brand {
     margin-left: 10px;
+    color: #242424 !important;
+}
+
+.navbar-brand i {
+    color: #242424 !important;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.btn-outline-light {
+    color: #242424 !important;
+    border-color: transparent !important;
+}
+
+.btn-outline-light:hover {
+    background-color: transparent !important;
+}
+
+.border-success {
+    border: 2px solid #168828 !important;
+}
+
+.border-black {
+    border: 1px solid #168828 !important;
+}
+
+.card-header {
+    background-color: #168828 !important;
+    color: #fff !important;
 }
 
 @page {

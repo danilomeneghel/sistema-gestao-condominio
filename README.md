@@ -92,6 +92,7 @@ Projeto licenciado sob <a href="LICENSE">The MIT License (MIT)</a>.<br><br>
 ![Screenshots](screenshots/screenshot10.png) <br><br>
 ![Screenshots](screenshots/screenshot11.png) <br><br>
 ![Screenshots](screenshots/screenshot12.png) <br><br>
+![Screenshots](screenshots/screenshot13.png) <br><br>
 
 
 Desenvolvido por<br>
