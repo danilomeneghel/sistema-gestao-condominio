@@ -94,6 +94,13 @@ Projeto licenciado sob <a href="LICENSE">The MIT License (MIT)</a>.<br><br>
 ![Screenshots](screenshots/screenshot12.png) <br><br>
 ![Screenshots](screenshots/screenshot13.png) <br><br>
 
+## GOSTOU DESSE SISTEMA? <br>
+
+Adquira a versão completa clicando no link: <br>
+
+https://clica.ai/1KJiMYT
+
+<br><br>
 
 Desenvolvido por<br>
 Danilo Meneghel<br>
